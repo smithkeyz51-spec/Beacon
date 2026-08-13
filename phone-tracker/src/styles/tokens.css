@@ -1,0 +1,79 @@
+:root {
+  /* Color — "night map" palette: deep blue-black ground, one signal-green accent */
+  --ink-950: #0B0F14;      /* page background */
+  --ink-900: #111721;      /* panel background */
+  --ink-800: #1A2230;      /* raised panel / input background */
+  --ink-700: #29384A;      /* borders, dividers */
+  --ink-500: #5C7185;      /* muted text */
+  --ink-300: #9AAEC2;      /* secondary text */
+  --paper: #EDF1F5;        /* primary text on dark */
+  --signal: #22D48A;       /* live / active accent (green, like a GPS fix) */
+  --signal-dim: #163B2C;   /* signal used as background tint */
+  --alert: #FF6B57;        /* stale / warning accent */
+  --alert-dim: #3A2320;
+
+  /* Type */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+
+  /* Space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink-950);
+  color: var(--paper);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
