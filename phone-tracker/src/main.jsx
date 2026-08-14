@@ -1,0 +1,21 @@
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import './styles/tokens.css'
+import './styles/app.css'
+import 'leaflet/dist/leaflet.css'
+import App from './App.jsx'
+import ErrorBoundary from './ErrorBoundary.jsx'
+import { AuthProvider } from './lib/AuthContext.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </BrowserRouter>
+    </ErrorBoundary>
+  </StrictMode>
+)
